@@ -1,14 +1,16 @@
 <?php
 include 'db.php';
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $game_id = $_POST['game_id'];
-    $user_name = $_POST['user_name'];
+    $username = $_POST['username'];
     $content = $_POST['content'];
 
-    $stmt = $conn->prepare("INSERT INTO posts (game_id, user_name, content, created_at) VALUES (?, ?, ?, NOW())");
-    $stmt->bind_param("iss", $game_id, $user_name, $content);
+    $stmt = $conn->prepare("INSERT INTO posts (game_id, username, content) VALUES (?, ?, ?)");
+    $stmt->bind_param("iss", $game_id, $username, $content);
     $stmt->execute();
-    header("Location: board.php?game_id=" . $game_id);
+
+    header("Location: game_detail.php?game_id=$game_id");
+    exit;
 }
 ?>

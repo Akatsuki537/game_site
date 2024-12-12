@@ -22,23 +22,19 @@
             <h2>ゲーム一覧</h2>
             <p>お好きなゲームを選択して、掲示板や攻略情報をご覧ください。</p>
             <ul>
-                <?php
-                include 'db.php'; // データベース接続ファイル
+            <?php
+include 'db.php';
 
-                // ゲームデータを取得
-                $query = "SELECT * FROM games ORDER BY name ASC";
-                $result = $conn->query($query);
+$result = $conn->query("SELECT * FROM games");
 
-                if ($result->num_rows > 0) {
-                    while ($game = $result->fetch_assoc()) {
-                        echo "<li><a href='board.php?game_id=" . $game['id'] . "'>" . htmlspecialchars($game['name']) . "</a></li>";
-                    }
-                } else {
-                    echo "<p>ゲームが登録されていません。</p>";
-                }
-
-                $conn->close();
-                ?>
+while ($row = $result->fetch_assoc()) {
+    echo '<div class="game-item">';
+    echo '<h2>' . htmlspecialchars($row['name']) . '</h2>';
+    echo '<p>' . htmlspecialchars($row['description']) . '</p>';
+    echo '<a href="game_detail.php?game_id=' . $row['id'] . '">詳細を見る</a>';
+    echo '</div>';
+}
+?>
             </ul>
         </section>
     </main>

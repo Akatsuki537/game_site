@@ -107,3 +107,107 @@
 .games-list ul li a:hover {
     text-decoration: underline;
 }
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.post, .strategy {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+h2, h3 {
+    margin-top: 20px;
+}
+
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: #444;
+}
+
+.post, .strategy {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* ヘッダー全体のスタイル */
+.site-header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* ヘッダー内のコンテナ */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* サイトのタイトル */
+.site-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* ナビゲーションのスタイル */
+.site-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.site-nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.site-nav a:hover {
+    color: #00bcd4; /* ホバー時の色 */
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .site-nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
