@@ -1,8 +1,12 @@
 <?php
-include 'db.php';
-$game_id = $_GET['game_id'];
-$game = $conn->query("SELECT * FROM games WHERE id = $game_id")->fetch_assoc();
+require 'db.php';
+$query = "SELECT * FROM games ORDER BY id ASC";
+$result = $conn->query($query);
+while ($row = $result->fetch_assoc()) {
+    echo '<a href="game_detail.php?game_id=' . $row['id'] . '">' . htmlspecialchars($row['name']) . '</a><br>';
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
