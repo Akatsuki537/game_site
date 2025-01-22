@@ -14,6 +14,8 @@
             <a href="games.php">ゲーム一覧</a>
             <a href="about.php">サイトについて</a>
             <a href="contact.php">お問い合わせ</a>
+            <a href="admin.php">管理ページ</a>
+
         </nav>
     </header>
 
